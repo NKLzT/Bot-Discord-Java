@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group 'nikas.bot'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+repositories {
+    maven {
+        url 'https://m2.dv8tion.net/releases'
+    }
+}
+
+dependencies {
+    implementation group: 'net.dv8tion', name: 'JDA', version: '5.0.0-alpha.17'
+    implementation 'com.sedmelluq:lavaplayer:1.3.77'
+
+}
+
+tasks.jar {
+    manifest.attributes["Main-Class"] = "nikas.bot.Bot"
+}
